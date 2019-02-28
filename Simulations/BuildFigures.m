@@ -17,6 +17,9 @@ marRig = 0.05;
 spacHor = 0.06;
 spacVer = 0.11;
 
+axis_limits = [-200 100];
+NFL_GCL_boundary = -100;
+
 set(0,'defaultAxesFontName', 'Arial')
 
 % Load subplots
@@ -48,13 +51,13 @@ for i = 1:numel(ax)
     colormap(flipud(hot))
     caxis([0 1.2])
     xlim([-1000 1000])
-    ylim([-200 100])
+    ylim(axis_limits)
     ax(i).Children(1).LineWidth = 1.5;
     line([-1000 1000], [0 0], 'LineStyle','--','LineWidth',0.5,'Color','k')
-    line([-1000 1000], [-100 -100], 'LineStyle','--','LineWidth',0.5,'Color','k')
+    line([-1000 1000], [NFL_GCL_boundary NFL_GCL_boundary], 'LineStyle','--','LineWidth',0.5,'Color','k')
     text(-980,35,'Vitreous','FontSize',fontSize)
     text(-980,-15,'NFL','FontSize',fontSize)
-    text(-980,-165,'GCL','FontSize',fontSize)
+    text(-980,NFL_GCL_boundary-15,'GCL','FontSize',fontSize)
     text(-1280,120,labels(i,:),'FontSize',fontSize)
     
     ax_tmp = axes('Position',get(ax(i),'position'), ...
