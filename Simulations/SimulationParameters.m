@@ -1,7 +1,7 @@
 if simulation == -1
     
     % Calculate distribution of orientation from NeuroMorpho
-
+    
     % Define AIS and AOP location
     AISLen = 40;
     AISPos = 40;
@@ -18,7 +18,7 @@ if simulation == -1
     
     % Plot filename
     figName = 'OrientationDistribution';
-
+    
 elseif simulation == 0
     
     %% Generate SketchUp Model
@@ -142,7 +142,7 @@ elseif simulation == 2
     % Sketchup filename
     filename = 'SimGeom_TwoElectrode.jpg';
     
-    % Plot filename    
+    % Plot filename
     figName = 'RotNeurite_TwoElectrode';
     
 elseif simulation == 3
@@ -223,7 +223,7 @@ elseif simulation == 4
     folderName = 'Figure - Param Search';
     
     figName = 'ParamSearch_OneElectrode';
-
+    
     % Define membrane thresholds
     Th = [12.09e-3 6.30e-3*ones(1,length(rot)-1)];
     
@@ -266,7 +266,7 @@ elseif simulation == 5
     folderName = 'Figure - Param Search';
     
     figName = 'ParamSearch_TwoElectrode';
-
+    
     % Define membrane thresholds
     Th = [12.09e-3 6.30e-3*ones(1,length(rot)-1)];
     
@@ -309,7 +309,7 @@ elseif simulation == 6
     folderName = 'Figure - Param Search';
     
     figName = 'ParamSearch_FourElectrode';
-
+    
     % Define membrane thresholds
     Th = [12.09e-3 6.30e-3*ones(1,length(rot)-1)];
     
@@ -469,7 +469,7 @@ elseif simulation == 6.4
     folderName = 'Figure - Param Search';
     
     figName = 'ParamSearch_FourElectrode_ratio1p5';
-
+    
     % Define membrane thresholds
     Th = [12.09e-3 (12.09+6.30)/2*1e-3*ones(1,length(rot)-1)];
     
@@ -512,7 +512,7 @@ elseif simulation == 6.5
     folderName = 'Figure - Param Search';
     
     figName = 'ParamSearch_FourElectrode_ratio1';
-
+    
     % Define membrane thresholds
     Th = [12.09e-3 12.09e-3*ones(1,length(rot)-1)];
     
@@ -728,7 +728,7 @@ elseif simulation == 11.1
     
     % Define source locations
     Xi = [-100e-6 -100e-6 -100e-6 -100e-6 100e-6 100e-6 100e-6 100e-6];
-    Yi = [100e-6 100e-6 100e-6 100e-6 100e-6 100e-6 100e-6 100e-6];
+    Yi = [100e-6 100e-6 100e-6 100e-6 100e-6 1 00e-6 100e-6 100e-6];
     Zi = [-300e-6 -100e-6 100e-6 300e-6 -300e-6 -100e-6 100e-6 300e-6];
     
     % Define electrode radius
@@ -814,7 +814,7 @@ elseif simulation == 12
     % Define rotation of NFL
     rotNFL = 22.5/180*pi;
     rotNFL_mat = [cos(rotNFL) -sin(rotNFL); ...
-                  sin(rotNFL)  cos(rotNFL)];
+        sin(rotNFL)  cos(rotNFL)];
     
     % Define source locations
     Xip = [-200e-6 0e-6 0e-6 200e-6];
@@ -860,7 +860,7 @@ elseif simulation == 12.1
     % Define rotation of NFL
     rotNFL = 22.5/180*pi;
     rotNFL_mat = [cos(rotNFL) -sin(rotNFL); ...
-                  sin(rotNFL)  cos(rotNFL)];
+        sin(rotNFL)  cos(rotNFL)];
     
     % Define source locations
     Xip = [-200e-6 0e-6 0e-6 200e-6];
@@ -909,7 +909,7 @@ elseif simulation == 12.2
     % Define rotation of NFL
     rotNFL = 22.5/180*pi;
     rotNFL_mat = [cos(rotNFL) -sin(rotNFL); ...
-                  sin(rotNFL)  cos(rotNFL)];
+        sin(rotNFL)  cos(rotNFL)];
     
     % Define source locations
     Xip = [-200e-6 0e-6 0e-6 200e-6];
@@ -964,7 +964,7 @@ elseif simulation == 13
     % Define rotation of NFL
     rotNFL = 45/180*pi;
     rotNFL_mat = [cos(rotNFL) -sin(rotNFL); ...
-                  sin(rotNFL)  cos(rotNFL)];
+        sin(rotNFL)  cos(rotNFL)];
     
     % Define source locations
     Xip = [-200e-6 -200e-6 0e-6 0e-6 200e-6 200e-6];
@@ -1010,7 +1010,7 @@ elseif simulation == 13.1
     % Define rotation of NFL
     rotNFL = 45/180*pi;
     rotNFL_mat = [cos(rotNFL) -sin(rotNFL); ...
-                  sin(rotNFL)  cos(rotNFL)];
+        sin(rotNFL)  cos(rotNFL)];
     
     % Define source locations
     Xip = [-200e-6 -200e-6 0e-6 0e-6 200e-6 200e-6];
@@ -1059,7 +1059,7 @@ elseif simulation == 13.2
     % Define rotation of NFL
     rotNFL = 45/180*pi;
     rotNFL_mat = [cos(rotNFL) -sin(rotNFL); ...
-                  sin(rotNFL)  cos(rotNFL)];
+        sin(rotNFL)  cos(rotNFL)];
     
     % Define source locations
     Xip = [-200e-6 -200e-6 0e-6 0e-6 200e-6 200e-6];
@@ -1114,7 +1114,7 @@ elseif simulation == 14
     % Define rotation of NFL
     rotNFL = 0/180*pi;
     rotNFL_mat = [cos(rotNFL) -sin(rotNFL); ...
-                  sin(rotNFL)  cos(rotNFL)];
+        sin(rotNFL)  cos(rotNFL)];
     
     % Define source locations
     Xip = [50e-6 50e-6 50e-6 50e-6 -150e-6 -150e-6 -150e-6 -150e-6];
@@ -1160,7 +1160,7 @@ elseif simulation == 14.1
     % Define rotation of NFL
     rotNFL = 0/180*pi;
     rotNFL_mat = [cos(rotNFL) -sin(rotNFL); ...
-                  sin(rotNFL)  cos(rotNFL)];
+        sin(rotNFL)  cos(rotNFL)];
     
     % Define source locations
     Xip = [50e-6 50e-6 50e-6 50e-6 -150e-6 -150e-6 -150e-6 -150e-6];
@@ -1179,7 +1179,7 @@ elseif simulation == 14.1
     h_F = 100e-6;
     Ya = [-10e-6 -110e-6*ones(1,length(rot)-1)];
     
-   % Define source amplitudes and pulse durations
+    % Define source amplitudes and pulse durations
     I_M = [-67e-6 -67e-6 -67e-6 -67e-6 -33e-6 -33e-6 -33e-6 -33e-6];
     I_D = [200e-6 200e-6 200e-6 200e-6 200e-6 200e-6 200e-6 200e-6];
     
@@ -1209,7 +1209,7 @@ elseif simulation == 14.2
     % Define rotation of NFL
     rotNFL = 0/180*pi;
     rotNFL_mat = [cos(rotNFL) -sin(rotNFL); ...
-                  sin(rotNFL)  cos(rotNFL)];
+        sin(rotNFL)  cos(rotNFL)];
     
     % Define source locations
     Xip = [50e-6 50e-6 50e-6 50e-6 -150e-6 -150e-6 -150e-6 -150e-6];
@@ -1302,7 +1302,7 @@ elseif simulation == 15
     folderName = 'Figure - Current Optim';
     
     % Plot filename
-    figName = 'CurrentVsActAndRadius_Yi100um';    
+    figName = 'CurrentVsActAndRadius_Yi100um';
     
 elseif simulation == 16
     
@@ -1353,7 +1353,7 @@ elseif simulation == 16
     folderName = 'Figure - Current Optim';
     
     % Plot filename
-    figName = 'CurrentVsActAndRadius_Yi200um';  
+    figName = 'CurrentVsActAndRadius_Yi200um';
     
 elseif simulation == 17
     
@@ -1391,6 +1391,214 @@ elseif simulation == 17
     % Plot filename
     figName = 'RotNeurite_OneElectrode';
     
+elseif simulation== 17.8
+    % Eight Electrode Simulation
+    
+    
+    
+    % Define source locations
+    
+    Xi = [-500e-6 -200e-6 -500e-6 -500e-6 500e-6 500e-6 500e-6 500e-6];
+    
+    Yi = [100e-6 100e-6 100e-6 100e-6 100e-6 100e-6 100e-6 100e-6]; %y =depth plane
+    
+    Zi = [-500e-6 -200e-6 200e-6 500e-6 -500e-6 -200e-6 200e-6 500e-6];
+    
+    
+    
+    % Define source amplitudes and pulse durations
+    
+    I_M = [-50e-6 -50e-6 -50e-6 -50e-6 -50e-6 -50e-6 -50e-6 -50e-6];
+    
+    I_D = [200e-6 200e-6 200e-6 200e-6 200e-6 200e-6 200e-6 200e-6];
+    
+    
+    
+    % Define electrode radius
+    
+    Ri = [50e-6 50e-6 50e-6 50e-6 50e-6 50e-6 50e-6 50e-6];
+    
+    
+    
+    % Define axon locations
+    
+    h_F = 100e-6;
+    
+    Ya = (100:-10:-200)*1e-6;
+    
+    Ya(1) = Ya(1) - 1e-6;
+    
+    
+    
+    % Define neurite rotations in xz plane
+    
+    rot = zeros(1,length(Ya));
+    
+    
+    
+    % Define location on neurite to calculate the membrane potential
+    
+    phi = 'magnitude';
+    
+    
+    
+    % Should we scale the output so the AOP just hits threshold?
+    
+    scaleOut = true;
+    
+    
+    
+    % Folder name
+    
+    folderName = 'Figure - Depth';
+    
+    
+    
+    % Plot filename
+    
+    figName = 'RotNeurite_8Electrode';
+elseif simulation ==17.6
+    %1 row simulation of electrodes according to Argus II devices
+    
+    % Define source locations
+    
+    Xi = [ -1725e-6 -575e-6 0e-6 575e-6 1150-6 1725-6 ];
+    
+    Yi = [100e-6 100e-6 100e-6 100e-6 100e-6 100e-6 ]; %y =depth plane
+    %Yi = Yi.*4;
+    % Zi = [-1150e-6 -575e-6 0e-6 575e-6 1150-6 1725-6 ];%
+    Zi = [-0e-6 -0e-6 0e-6 0e-6 0e-6 0e-6 ];
+    
+    
+    
+    % Define source amplitudes and pulse durations
+    
+    %pairs
+    %     I_M = [-50e-6 50-6 -50e-6 -50e-6 -50e-6 -50e-6];
+    %     I_D = [200e-6 200e-6 200e-6 200e-6 200e-6 200e-6];
+    
+    %one electrode stimulation
+    I_M = [0e-6 0e-6 50e-6 0e-6 0e-6 0e-6];
+    I_D = [0e-6  0e-6 500e-6 0e-6  0e-6  0e-6 ];
+    
+    
+    
+    % Define electrode radius
+    
+    Ri = [200e-6 200e-6 200e-6 200e-6 200e-6 200e-6];
+    
+    
+    
+    % Define axon locations
+    
+    h_F = 100e-6;
+    
+    Ya = (100:-10:-200)*1e-6;
+    
+    Ya(1) = Ya(1) - 1e-6;
+    
+    
+    
+    % Define neurite rotations in xz plane
+    
+    rot = zeros(1,length(Ya));
+    
+    
+    
+    % Define location on neurite to calculate the membrane potential
+    
+    phi = 'magnitude';
+    
+    
+    
+    % Should we scale the output so the AOP just hits threshold?
+    
+    scaleOut = true;
+    
+    
+    
+    % Folder name
+    
+    folderName = 'Figure - Depth';
+    
+    
+    
+    % Plot filename
+    
+    figName = 'RotNeurite_ArgusOneElectrode';
+elseif simulation 1017.6
+    % 6 electrode simulation with varying rotations
+    %1 row simulation of electrodes according to Argus II devices
+    
+    % Define source locations
+    
+    Xi = [ -1725e-6 -575e-6 0e-6 575e-6 1150-6 1725-6 ];
+    
+    Yi = [100e-6 100e-6 100e-6 100e-6 100e-6 100e-6 ]; %y =depth plane
+    %Yi = Yi.*4;
+    % Zi = [-1150e-6 -575e-6 0e-6 575e-6 1150-6 1725-6 ];%
+    Zi = [-0e-6 -0e-6 0e-6 0e-6 0e-6 0e-6 ];
+    
+    
+    
+    % Define source amplitudes and pulse durations
+    
+    %pairs
+    %     I_M = [-50e-6 50-6 -50e-6 -50e-6 -50e-6 -50e-6];
+    %     I_D = [200e-6 200e-6 200e-6 200e-6 200e-6 200e-6];
+    
+    %one electrode stimulation
+    I_M = [0e-6 0e-6 50e-6 0e-6 0e-6 0e-6];
+    I_D = [0e-6  0e-6 500e-6 0e-6  0e-6  0e-6 ];
+    
+    
+    
+    % Define electrode radius
+    
+    Ri = [200e-6 200e-6 200e-6 200e-6 200e-6 200e-6];
+    
+    
+    
+    % Define axon locations
+    
+    h_F = 100e-6;
+    
+    Ya = (100:-10:-200)*1e-6;
+    
+    Ya(1) = Ya(1) - 1e-6;
+    
+    
+    
+    % Define neurite rotations in xz plane
+    
+    
+    % Define neurite rotations in xz plane
+    d_rot = pi/12;
+    rot = [0 0:d_rot:pi+pi/10000];
+%     rot= linspace(-pi,pi, 10);
+    
+    
+    % Define location on neurite to calculate the membrane potential
+    
+    phi = 'magnitude';
+    
+    
+    
+    % Should we scale the output so the AOP just hits threshold?
+    
+    scaleOut = true;
+    
+    
+    
+    % Folder name
+    
+    folderName = 'Figure - Depth';
+    
+    
+    
+    % Plot filename
+    
+    figName = 'RotNeurite_ArgusOneElectrodeOfOneRow';
 elseif simulation == 18
     
     %% One Electrode Simulation
@@ -1463,6 +1671,64 @@ elseif simulation == 19
     % Plot filename
     figName = 'RotNeurite_OneElectrode';
     
+elseif simulation== 20
+    %% Four Electrode Depth Simulation
+    % Define neurite rotations in xz plane
+    d_rot = pi/6;
+    rot = [0 0:d_rot:pi+pi/10000];
+    
+    
+    % Define source locations
+    Xi = [-100e-6 -100e-6 -100e-6 -100e-6 100e-6 100e-6 100e-6 100e-6];
+    Yi = [100e-6 100e-6 100e-6 100e-6 100e-6 100e-6 100e-6 100e-6];
+    Zi = [-300e-6 -100e-6 100e-6 300e-6 -300e-6 -100e-6 100e-6 300e-6];
+    
+    % Define electrode radius
+    Ri = [50e-6 50e-6 50e-6 50e-6 50e-6 50e-6 50e-6 50e-6];
+    
+    % Define axon locations
+    h_F = 100e-6;
+    Ya = [-10e-6 -110e-6*ones(1,length(rot)-1)];
+    
+    % Define source amplitudes and pulse durations
+    I_M = [-50e-6 -50e-6 -50e-6 -50e-6 -50e-6 -50e-6 -50e-6 -50e-6]/2;
+    I_D = [200e-6 200e-6 200e-6 200e-6 200e-6 200e-6 200e-6 200e-6];
+    
+    % Define location on neurite to calculate the membrane potential
+    phi = 'magnitude';
+    
+    % Define post-simulation resampling
+    d_theta_upsamp = pi/90;
+    
+    %Plot scale
+    pScale = 'linear';
+    crossing = 0.5;
+    
+    
+    
+    % Define axon locations
+    h_F = 100e-6;
+    Ya = (100:-10:-200)*1e-6;
+    Ya(1) = Ya(1) - 1e-6;
+    
+    % Define neurite rotations in xz plane
+    rot = zeros(1,length(Ya));
+    
+    % Define source amplitudes and pulse durations
+    I_M = [-50e-6];
+    I_D = [200e-6];
+    
+    % Define location on neurite to calculate the membrane potential
+    phi = 'magnitude';
+    
+    % Should we scale the output so the AOP just hits threshold?
+    scaleOut = true;
+    
+    % Folder name
+    folderName = 'Figure - Depth';
+    
+    % Plot filename
+    figName = 'RotNeurite_FourElectrode'
 elseif simulation == 1001
     
     %% One Electrode Simulation
@@ -1540,4 +1806,3 @@ elseif simulation == 1002
     
     figName = 'Plane200um_Normal';
 end
-    

@@ -40,7 +40,7 @@ T = -t_max:d_t:t_max;
 X = -x_max:d_x:x_max;
 X_Centre = find(X == 0);
 
-simulation = 1;
+simulation = 3;
 
 SimulationParameters
 

@@ -1,16 +1,19 @@
+%%
+clear all close all
+%%
 addpath([fileparts(pwd()) '\Utilities'])
 addpath([fileparts(pwd()) '\Utilities\altmany-export_fig-04ca93c'])
 addpath(fileparts(pwd()))
-
+addpath(genpath(pwd()))
 %% Parameters
     
 % Define simulation size and step sizes
-x_max = 2000e-6;
-z_max = 2000e-6;
+x_max = 3000e-6;
+z_max = 3000e-6;
 t_max = 600e-6;
-d_x = 10e-6;
-d_z = 10e-6;
-d_t = 4e-6;
+d_x = 10e-5;
+d_z = 10e-5;
+d_t = 8e-5;
 
 Z = -z_max:d_z:z_max;
 T = -t_max:d_t:t_max;
@@ -18,15 +21,16 @@ X = -x_max:d_x:x_max;
 X_Centre = find(X == 0);
 Z_Centre = find(Z == 0);
 
-simulation = 17;
+simulation = 17.6;
 
 SimulationParameters
 
 % Define membrane thresholds
+%these thresholds were simulated 
 Th = [12.09e-3 6.30e-3*ones(1,length(rot)-1)];
 
 %% Calculate the longitudinal and transverse components separately
-
+ 
 Ve_z = zeros(length(rot),length(Z));
 Ve_x = zeros(length(rot),length(X));
 
@@ -42,8 +46,10 @@ for i = 1:length(rot)
         );
     
     % Get Ve
+    %WHATS HAPPENING HERE
     Ve_all = real(fftshift(ifftn(ifftshift((2*pi)^(3/2)/d_z/d_x/d_t*Ve_f))));
-    
+    %Ve_all coordinates are x,z,t where t should be time, we think.
+    % Grabbing the brightest frame in time
     Ve_z(i,:) = squeeze(max(squeeze(Ve_all(X_Centre,:,:)),[],2));
     Ve_x(i,:) = squeeze(max(squeeze(Ve_all(:,Z_Centre,:)),[],2));
     
@@ -63,17 +69,21 @@ Ve_x_norm = Ve_x_tmp./repmat(max(Ve_x_tmp,[],2),1,length(X));
 %% Plot normalised spread with normalised contours
 
 figz = figure;
-imagesc(Z*1e6,Ya*1e6,Ve_z_norm), axis xy, xlim([-1000 1000]), ylim([Ya(end) Ya(1)]*1e6)
+imagesc(Z*1e6,Ya*1e6,Ve_z_norm), axis xy, xlim([-3000 3000]), ylim([Ya(end) Ya(1)]*1e6)
+xlabel('Z'); ylabel('Y');title('Normalized Z-Y (depth) Plane')
+
 hold on
 contour(Z*1e6,Ya*1e6,Ve_z_norm,[0.5 0.5],'k')
-
 figx = figure;
-imagesc(X*1e6,Ya*1e6,Ve_x_norm), axis xy, xlim([-1000 1000]), ylim([Ya(end) Ya(1)]*1e6)
+imagesc(X*1e6,Ya*1e6,Ve_x_norm), axis xy, xlim([-3000 3000]), ylim([Ya(end) Ya(1)]*1e6)
+title('Normalized X-Y Plane');
+xlabel('X'); ylabel('Y');
 hold on
 contour(X*1e6,Ya*1e6,Ve_x_norm,[0.5 0.5],'k')
 
-saveas(figz, ['Figures/' folderName '/' figName 'z'],'fig')
-saveas(figx, ['Figures/' folderName '/' figName 'x'],'fig')
+
+saveas(figz, ['Figures/' folderName '/' figName 'z'],'png')
+saveas(figx, ['Figures/' folderName '/' figName 'x'],'png')
 
 %% Plot spread with normalised contours
 
@@ -81,18 +91,22 @@ Ve_z_shift = Ve_z - min(Ve_z(:));
 Ve_x_shift = Ve_x - min(Ve_x(:));
 
 figz = figure;
-imagesc(Z*1e6,Ya*1e6,Ve_z_shift), axis xy, xlim([-1000 1000]), ylim([Ya(end) Ya(1)]*1e6);
+imagesc(Z*1e6,Ya*1e6,Ve_z_shift), axis xy, xlim([-2000 2000]), ylim([Ya(end) Ya(1)]*1e6);
+title(' Z-Y Plane');
+xlabel('Z'); ylabel('Y');
 hold on
 clim = figz.CurrentAxes.CLim;
 contour(Z*1e6,Ya*1e6,Ve_z_norm,[0.5 0.5],'k')
 figz.CurrentAxes.CLim = clim;
 
 figx = figure;
-imagesc(X*1e6,Ya*1e6,Ve_x_shift), axis xy, xlim([-1000 1000]), ylim([Ya(end) Ya(1)]*1e6)
+imagesc(X*1e6,Ya*1e6,Ve_x_shift), axis xy, xlim([-2000 2000]), ylim([Ya(end) Ya(1)]*1e6)
+title('X-Y Plane');
+xlabel('X'); ylabel('Y');
 hold on
 clim = figz.CurrentAxes.CLim;
 contour(X*1e6,Ya*1e6,Ve_x_norm,[0.5 0.5],'k')
 figz.CurrentAxes.CLim = clim;
 
-saveas(figz, ['Figures/' folderName '/' figName 'z_unnorm'],'fig')
-saveas(figx, ['Figures/' folderName '/' figName 'x_unnorm'],'fig')
+saveas(figz, ['Figures/' folderName '/' figName 'z_unnorm'],'png')
+saveas(figx, ['Figures/' folderName '/' figName 'x_unnorm'],'png')
